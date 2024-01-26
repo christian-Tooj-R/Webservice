@@ -11,11 +11,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.connexion.Connect;
+import com.spring.models.Annonce;
 import com.spring.models.Categorie;
 import com.spring.models.Marque;
 import com.spring.models.Token;
@@ -52,6 +54,39 @@ public class ApiController {
             e.printStackTrace();
         }
         return new ArrayList<>();
+    }
+    
+    @PostMapping("/addMarque")
+    public ResponseEntity<Response> addMarque(@RequestBody Marque marque) {
+        Response response = new Response();
+        try {
+            
+            Connection connect = new Connect().getConnection();
+            marque.insert(connect);
+
+            response.setStatus_code("200");
+            response.setMessage("réussi");
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setMessage(e.getMessage());
+            return new ResponseEntity<>(response,response.getStatus());
+        }
+    }
+    @PostMapping("/addCategorie")
+    public ResponseEntity<Response> addCategorie(@RequestBody Categorie categorie) {
+        Response response = new Response();
+        try {
+            Connection connect = new Connect().getConnection();
+            categorie.insert(connect);
+            response.setStatus_code("200");
+            response.setMessage("réussi");
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setMessage(e.getMessage());
+            return new ResponseEntity<>(response,response.getStatus());
+        }
     }
 
     
