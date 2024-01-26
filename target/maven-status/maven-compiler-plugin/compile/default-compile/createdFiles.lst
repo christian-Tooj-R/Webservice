@@ -1,0 +1,11 @@
+com\spring\models\Propriete.class
+com\spring\models\view\AnnonceDetailView.class
+com\spring\repository\DiscussionRepository.class
+com\spring\models\Photo.class
+com\spring\models\DetailVoiture.class
+com\spring\services\InfoAnnonceService.class
+com\spring\models\Message.class
+com\spring\models\Discussion.class
+com\spring\models\InfoAnnonce.class
+com\spring\repository\InfoAnnonceRepository.class
+com\spring\services\DiscussionService.class

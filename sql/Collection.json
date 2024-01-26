@@ -1,0 +1,108 @@
+
+// Collection "discussions"
+{
+    "participants": ["1:Alice", "2:Bob"],
+    "messages": [
+      {
+        "emetteur": "Alice",
+        "contenu": "Bonjour Bob",
+        "date": "2024-01-19T17:29:01.263+03:00"
+      },
+      {
+        "emetteur": "Bob",
+        "contenu": "salut! quoi de neuf?",
+        "date": "2024-01-19T17:29:01.263+03:00"
+      }
+    ]
+}
+  
+{
+    "participants": ["1:Alice", "3:John"],
+    "messages": [
+      {
+        "emetteur": "Alice",
+        "contenu": "Bonjour John",
+        "date": "2024-01-19T17:29:01.263+03:00"
+      }
+    ]
+  }
+  
+  // Collection "infoannonce"
+  {
+    "annonce_id": "1",
+    "auteur_id": "1",
+    "auteur": "John Doe",
+    "prix_vente": 120500000,
+    "statut": 1,
+    "date_annonce": "2024-01-19T17:29:01.263+03:00",
+    "detailvoiture": {
+      "matricule": "ABC123",
+      "kilometrage": 20000,
+      "marque": "Toyota",
+      "categorie": "Sedan",
+      "annee": 2020,
+      "carburant": "Essence"
+    },
+    "description": "Description de l'annonce 1",
+    "proprietes": [
+      {
+        "titre": "Propriété 1",
+        "description": "Description de la propriété 1"
+      },
+      {
+        "titre": "Propriété 2",
+        "description": "Description de la propriété 2"
+      }
+    ],
+    "favoris": [],
+    "photos": [
+      {
+        "data": "base64_encoded_image_data_1",
+        "contentType": "image/jpeg"
+      },
+      {
+        "data": "base64_encoded_image_data_2",
+        "contentType": "image/png"
+      }
+    ]
+  }
+  
+  {
+    "annonce_id": "2",
+    "auteur_id": "1",
+    "auteur": "Jane Doe",
+    "prix_vente": 250200000,
+    "statut": 1,
+    "date_annonce": "2024-01-19T17:29:01.263+03:00",
+    "detailvoiture": {
+      "matricule": "XYZ789",
+      "kilometrage": 30000,
+      "marque": "Honda",
+      "categorie": "SUV",
+      "annee": 2019,
+      "carburant": "Diesel"
+    },
+    "description": "Description de l'annonce 2",
+    "proprietes": [
+      {
+        "titre": "Propriété 3",
+        "description": "Description de la propriété 3"
+      },
+      {
+        "titre": "Propriété 4",
+        "description": "Description de la propriété 4"
+      }
+    ],
+    "favoris": [],
+    "photos": [
+      {
+        "data": "base64_encoded_image_data_3",
+        "contentType": "image/jpeg"
+      },
+      {
+        "data": "base64_encoded_image_data_4",
+        "contentType": "image/png"
+      }
+    ]
+  }
+  
