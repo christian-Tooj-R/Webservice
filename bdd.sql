@@ -1,3 +1,10 @@
+create database vehicule;
+\c vehicule;
+
+create table marque(
+    id serial primary key,
+    nom varchar(50)
+);
 INSERT INTO marque (nom) VALUES
 ('Toyota'),
 ('Honda'),
@@ -5,6 +12,10 @@ INSERT INTO marque (nom) VALUES
 ('BMW');
 
 
+create table categorie(
+    id serial primary key,
+    nom varchar(50)
+);
 INSERT INTO categorie (nom) VALUES
 ('Sedan'),
 ('SUV'),
@@ -12,6 +23,14 @@ INSERT INTO categorie (nom) VALUES
 ('Truck');
 
 
+create table utilisateur(
+    id serial primary key,
+    nom varchar(50),
+    datenaissance date,
+    email varchar(50),
+    mdp varchar(50),
+    typeutilisateur int
+);
 
 INSERT INTO utilisateur (nom, datenaissance, email, mdp, typeutilisateur) VALUES
 ('Hendry', '2004-09-09', 'hendry@gmail.com', '123',2),

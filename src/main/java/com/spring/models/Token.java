@@ -2,7 +2,7 @@ package com.spring.models;
 
 
 
-import java.util.Date;
+import java.sql.Date;
 
 import annotation.Column;
 import annotation.Table;

@@ -11,5 +11,5 @@ import com.spring.models.Annonce;
 
 
 public interface AnnonceRepository extends MongoRepository<Annonce, String> {
-    List<Annonce> findByProprietaire(String proprietaire);
+    List<Annonce> findByProprietaire(String idproprietaire);
 }
