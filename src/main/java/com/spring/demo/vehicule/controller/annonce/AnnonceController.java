@@ -88,7 +88,10 @@ public class AnnonceController {
     @PostMapping("/insert")
     public ResponseEntity<?> insertAnnonce(@RequestBody Annonce annonce,@RequestHeader("Authorization") String token) {
         try {
-            tokenService.verifAuth(token);
+            int idprop = tokenService.verifAuth(token);
+            annonce.setProp(idprop);
+            annonce.setStatus(0);
+            annonce.setEstValide(1);
 
             Annonce insertedAnnonce = annonceService.insertAnnonce(annonce);
             return ResponseEntity.ok(new APIResponse("Annonce insérée avec succès", insertedAnnonce));
