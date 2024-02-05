@@ -18,13 +18,6 @@
 	</properties>
 	<dependencies>
 
-		<dependency>
-    <groupId>com.dao</groupId>
-    <artifactId>dao</artifactId>
-    <version>1.0</version>
-    <scope>system</scope>
-    <systemPath>${project.basedir}/src/main/resources/ChrisTooj_Crud.jar</systemPath>
-	</dependency>
 
 		<dependency>
             <groupId>io.jsonwebtoken</groupId>
