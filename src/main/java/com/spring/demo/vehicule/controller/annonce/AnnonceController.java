@@ -116,9 +116,9 @@ public class AnnonceController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<APIResponse> getAnnonceById(@PathVariable String id,@RequestHeader("Authorization") String token) {
+    public ResponseEntity<APIResponse> getAnnonceById(@PathVariable String id) {
         try {
-            tokenService.verifAuth(token);
+        
 
             Annonce annonce = annonceService.findById(id);
             return ResponseEntity.ok(new APIResponse("", annonce));
