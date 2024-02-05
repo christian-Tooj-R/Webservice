@@ -33,10 +33,8 @@ public class AnnonceController {
     private TokenService tokenService;
 
     @GetMapping("/nonvendues")
-    public ResponseEntity<APIResponse> getAnnoncesNonVendues(@RequestHeader("Authorization") String token) {
+    public ResponseEntity<APIResponse> getAnnoncesNonVendues() {
         try {
-            tokenService.verifAuth(token);
-
             List<Annonce> nonVendu = annonceService.getAnnoncesNonVendues();
             return ResponseEntity.ok(new APIResponse("", nonVendu));
         } catch (Exception e) {
