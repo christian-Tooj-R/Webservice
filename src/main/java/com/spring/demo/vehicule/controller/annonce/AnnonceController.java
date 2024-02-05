@@ -19,7 +19,7 @@ import com.spring.demo.vehicule.model.annonce.Statistique;
 import com.spring.demo.vehicule.service.annonce.AnnonceService;
 import com.spring.demo.vehicule.service.utilisateur.TokenService;
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -92,6 +92,7 @@ public class AnnonceController {
             annonce.setProp(idprop);
             annonce.setStatus(0);
             annonce.setEstValide(1);
+            annonce.setFavoris(new ArrayList<>());
 
             Annonce insertedAnnonce = annonceService.insertAnnonce(annonce);
             return ResponseEntity.ok(new APIResponse("Annonce insérée avec succès", insertedAnnonce));
