@@ -1,11 +1,15 @@
 package com.spring.demo.vehicule.model.notif;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
+
 public class PushNotificationRequest {
     private String to;
     private String title;
     private String message;
 
     
+
     public String getTo() {
         return to;
     }
