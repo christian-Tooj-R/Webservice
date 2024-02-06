@@ -25,12 +25,15 @@ public class NotificationController {
     private PushNotificationService pushNotificationService;
 
     @PostMapping("/send")
-    public void sendPushNotification(@RequestBody PushNotificationRequest request) {
-        
+    public ResponseEntity<APIResponse> sendPushNotification(@RequestBody PushNotificationRequest request) {
         try {
             pushNotificationService.sendPushNotification(request.getTo(), request.getTitle(), request.getMessage());
+            return ResponseEntity.ok(new APIResponse("Notification sent successfully","coucou"));
         } catch (Exception e) {
             e.printStackTrace();
+            APIResponse response = new APIResponse("Erreur => " + e.getMessage(), false);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
 }
+

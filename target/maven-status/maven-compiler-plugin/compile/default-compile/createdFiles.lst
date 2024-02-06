@@ -1,6 +1,9 @@
 com\spring\demo\vehicule\service\utilisateur\UtilisateurService.class
 com\spring\demo\DemoApplication.class
+com\spring\demo\vehicule\service\notif\PushNotificationService.class
+com\spring\demo\vehicule\controller\notif\NotificationController.class
 com\spring\demo\vehicule\repository\utilisateur\UtilisateurRepository.class
+com\spring\demo\vehicule\model\notif\PushNotificationRequest.class
 com\spring\demo\vehicule\model\annonce\Statistique.class
 com\spring\demo\vehicule\repository\categorie\CategorieRepository.class
 com\spring\demo\Controller.class
