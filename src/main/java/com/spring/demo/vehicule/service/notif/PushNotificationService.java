@@ -14,7 +14,7 @@ public class PushNotificationService {
     private final String FCM_API = "https://fcm.googleapis.com/fcm/send";
     private final String SERVER_KEY = "AAAA1aOZUD0:APA91bGcYSSY8V3EnUmENOmlZpzh8PjWWNFWI2fP0CYK_1tCflIfAF-LEUz0s_YjAk13_9l5EWiE7f4quZ7w97GF-eOsqjcGSEeTtida36a_67krW2P1kM_0wETVHKgabj-cmWCKGCMw";
 
-    public void sendPushNotification(String deviceToken, String title, String message) {
+    public void sendPushNotification(String deviceToken, String title, String message) throws Exception{
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("Authorization", "key=" + SERVER_KEY);
