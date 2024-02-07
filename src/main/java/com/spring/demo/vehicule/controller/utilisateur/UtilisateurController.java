@@ -126,5 +126,18 @@ public class UtilisateurController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
+
+    @GetMapping("/getNameUser")
+    public String getNameByToken(@RequestHeader("Authorization") String token){
+        try {
+            long iduser = tokenService.verifAuth(token);
+
+            Optional<Utilisateur> utilisateur = utilisateurService.getUtilisateurById(iduser);
+            return utilisateur.get().getNom();
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+    
 }
        
