@@ -39,7 +39,7 @@ public class PushNotificationService {
     public String sendNotificationBytoken(PushNotificationRequest pushNotificationRequest){
         Notification notification = Notification
             .builder()
-            .setTitle(pushNotificationRequest.getTitle())
+            .setTitle(pushNotificationRequest.getSender()+" vous a envoyer un message. ")
             .setBody(pushNotificationRequest.getMessage())
             .build();
         
