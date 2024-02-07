@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.demo.api.APIResponse;
-import com.spring.demo.vehicule.model.marque.Marque;
-import com.spring.demo.vehicule.model.notif.PushNotificationRequest;
 import com.spring.demo.vehicule.model.phone.Peripherique;
 import com.spring.demo.vehicule.service.utilisateur.PeripheriqueService;
 import com.spring.demo.vehicule.service.utilisateur.TokenService;
@@ -36,18 +34,30 @@ public class PeripheriqueController {
             APIResponse response = new APIResponse("Erreur lors de la récupération des peripherique: " + e.getMessage(), false);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
-    }
+   } 
 
 
     @PostMapping("/create")
     public ResponseEntity<APIResponse> createInstance(@RequestBody Peripherique periph,@RequestHeader("Authorization") String token) {
         try {
-            tokenService.verifAuth(token);
+            int id = tokenService.verifAuth(token);
+            periph.setIduser(id);
             
             Peripherique p = peripheriqueService.createInstance(periph);
             return ResponseEntity.ok(new APIResponse("Instance créée avec succès", p));
         } catch (Exception e) {
             APIResponse response = new APIResponse("Erreur lors de la création de l instance appareil: " + e.getMessage(), false);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+    @PostMapping("/delete")
+    public ResponseEntity<APIResponse> deleteInstance(@RequestBody Peripherique periph,@RequestHeader("Authorization") String token) {
+        try {
+            tokenService.verifAuth(token);
+            peripheriqueService.deleteByToken(periph);
+            return ResponseEntity.ok(new APIResponse("Instance effacé", null));
+        } catch (Exception e) {
+            APIResponse response = new APIResponse("Erreur lors de la suppression de l instance appareil: " + e.getMessage(), false);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }

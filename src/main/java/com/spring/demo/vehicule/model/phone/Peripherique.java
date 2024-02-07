@@ -19,7 +19,6 @@ public class Peripherique {
     @Column(name = "token")
     private String token;
 
-    
     public Integer getId() {
         return id;
     }
