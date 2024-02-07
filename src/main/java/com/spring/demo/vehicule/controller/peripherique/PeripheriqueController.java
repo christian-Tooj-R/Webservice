@@ -25,7 +25,7 @@ public class PeripheriqueController {
     @Autowired
     private TokenService tokenService;
 
-    @GetMapping("/getByIdUser")
+    @PostMapping("/getByIdUser")
     public ResponseEntity<APIResponse> findByUser(@RequestBody Peripherique periph,@RequestHeader("Authorization") String token) {
         try {
             tokenService.verifAuth(token);
