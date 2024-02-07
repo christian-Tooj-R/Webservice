@@ -12,11 +12,15 @@ com\spring\demo\vehicule\service\utilisateur\TokenService.class
 com\spring\demo\vehicule\repository\utilisateur\TokenRepository.class
 com\spring\demo\vehicule\controller\categorie\CategorieController.class
 com\spring\demo\api\ListAPI.class
+com\spring\demo\vehicule\controller\peripherique\PeripheriqueController.class
 com\spring\demo\vehicule\model\annonce\Annonce.class
 com\spring\demo\vehicule\model\utilisateur\Utilisateur.class
+com\spring\demo\vehicule\repository\utilisateur\PeripheriqueRepository.class
+com\spring\demo\vehicule\model\phone\Peripherique.class
 com\spring\demo\vehicule\repository\marque\MarqueRepository.class
 com\spring\demo\vehicule\service\annonce\AnnonceService.class
 com\spring\demo\vehicule\repository\annonce\AnnonceRepository.class
+com\spring\demo\vehicule\service\utilisateur\PeripheriqueService.class
 com\spring\demo\vehicule\model\categorie\Categorie.class
 com\spring\demo\ServletInitializer.class
 com\spring\demo\vehicule\model\marque\Marque.class

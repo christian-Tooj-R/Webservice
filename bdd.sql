@@ -45,3 +45,10 @@ INSERT INTO utilisateur (nom, datenaissance, email, mdp, typeutilisateur) VALUES
     datecreation date,
     dateexpiration date
 );
+
+
+create table peripherique(
+    id serial,
+    iduser int references utilisateur(id),
+    token varchar
+);

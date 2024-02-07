@@ -82,7 +82,8 @@ public class UtilisateurController {
 
                 // Map<String, Object> map = utilisateurService.generateToken(verif);
                 
-                Token listTokens = tokenService.getByToken(token);
+             //   tokenService.verifAuth(token);
+                Token listTokens = tokenService.getByToken(token.replace("Bearer ",""));
                 if(listTokens!=null){
                     tokenService.deleteToken(listTokens);
                     return ResponseEntity.ok(new APIResponse("logout success", true));

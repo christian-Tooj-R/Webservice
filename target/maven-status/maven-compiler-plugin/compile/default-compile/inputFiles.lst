@@ -1,6 +1,7 @@
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\model\annonce\Favori.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\service\utilisateur\TokenService.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\ServletInitializer.java
+D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\model\phone\Peripherique.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\Controller.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\service\categorie\CategorieService.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\model\annonce\Statistique.java
@@ -12,6 +13,7 @@ D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spri
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\DemoApplication.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\controller\utilisateur\UtilisateurController.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\service\annonce\AnnonceService.java
+D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\repository\utilisateur\PeripheriqueRepository.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\model\notif\PushNotificationRequest.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\repository\annonce\AnnonceRepository.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\repository\marque\MarqueRepository.java
@@ -20,6 +22,8 @@ D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spri
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\repository\utilisateur\UtilisateurRepository.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\service\notif\PushNotificationService.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\controller\annonce\AnnonceController.java
+D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\controller\peripherique\PeripheriqueController.java
+D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\service\utilisateur\PeripheriqueService.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\api\APIResponse.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\model\annonce\Annonce.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\controller\marque\MarqueController.java
