@@ -39,7 +39,6 @@ public class AnnonceController {
             List<Annonce> nonVendu = annonceService.getAnnoncesNonVendues();
             return ResponseEntity.ok(new APIResponse("", nonVendu));
         } catch (Exception e) {
-            // TODO: handle exception
             APIResponse response = new APIResponse("Erreur lors de la création du besoin: " + e.getMessage(), false);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }

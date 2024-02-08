@@ -2,6 +2,8 @@ D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spri
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\service\utilisateur\TokenService.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\ServletInitializer.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\model\phone\Peripherique.java
+D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\repository\notif\NotifUserRepository.java
+D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\model\notif\NotifUser.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\Controller.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\service\categorie\CategorieService.java
 D:\ITU\S5\Rojo\Cloud\ws\ProjetFinalWebServices\Webservice\src\main\java\com\spring\demo\vehicule\model\annonce\Statistique.java

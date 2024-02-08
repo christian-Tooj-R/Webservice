@@ -55,5 +55,5 @@ create table peripherique(
 create table notifuser(
     id serial,
     iduser int references utilisateur(id),
-    message text
+    message varchar
 );

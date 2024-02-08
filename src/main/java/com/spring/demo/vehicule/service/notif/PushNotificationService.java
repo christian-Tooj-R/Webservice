@@ -1,40 +1,39 @@
 package com.spring.demo.vehicule.service.notif;
 
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.web.client.RestTemplate;
 
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.Notification;
+import com.spring.demo.vehicule.model.notif.NotifUser;
 import com.spring.demo.vehicule.model.notif.PushNotificationRequest;
+import com.spring.demo.vehicule.model.phone.Peripherique;
+import com.spring.demo.vehicule.repository.notif.NotifUserRepository;
+import com.spring.demo.vehicule.repository.utilisateur.PeripheriqueRepository;
 
 @Service
 public class PushNotificationService {
 
-    private final String FCM_API = "https://fcm.googleapis.com/fcm/send";
-    private final String SERVER_KEY = "AAAA1aOZUD0:APA91bGcYSSY8V3EnUmENOmlZpzh8PjWWNFWI2fP0CYK_1tCflIfAF-LEUz0s_YjAk13_9l5EWiE7f4quZ7w97GF-eOsqjcGSEeTtida36a_67krW2P1kM_0wETVHKgabj-cmWCKGCMw";
-    
     @Autowired
     FirebaseMessaging firebaseMessaging;
+    @Autowired
+    NotifUserRepository notifUserRepository;
+    @Autowired
+    PeripheriqueRepository peripheriqueRepository;
 
 
-    public void sendPushNotification(String deviceToken, String title, String message) throws Exception{
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", "key=" + SERVER_KEY);
-
-        PushNotificationRequest pushNotificationRequest = new PushNotificationRequest();
-        pushNotificationRequest.setTo(deviceToken);
-        pushNotificationRequest.setTitle(title);
-        pushNotificationRequest.setMessage(message);
-
-        HttpEntity<PushNotificationRequest> request = new HttpEntity<>(pushNotificationRequest, headers);
-        new RestTemplate().postForObject(FCM_API, request, String.class);
+    
+    public NotifUser createNotif(NotifUser notif) {
+        return notifUserRepository.save(notif);
     }
+    public List<NotifUser> getNotifByUser(int iduser){
+        return notifUserRepository.getByUser(iduser);
+    }
+
 
     public String sendNotificationBytoken(PushNotificationRequest pushNotificationRequest){
         Notification notification = Notification
@@ -51,6 +50,14 @@ public class PushNotificationService {
 
         try {
             firebaseMessaging.send(message);
+            Peripherique peripherique = peripheriqueRepository.getInstanceByToken(pushNotificationRequest.getTo());
+            int iduser = peripherique.getIduser();
+
+            NotifUser notifUser = new NotifUser();
+            notifUser.setIduser(iduser);
+            notifUser.setMessage(pushNotificationRequest.getSender()+": "+pushNotificationRequest.getMessage());
+            createNotif(notifUser);
+
             return "Success sending Notification";
         } catch (Exception e) {
             e.printStackTrace();

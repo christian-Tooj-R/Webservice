@@ -7,6 +7,7 @@ com\spring\demo\vehicule\model\notif\PushNotificationRequest.class
 com\spring\demo\vehicule\model\annonce\Statistique.class
 com\spring\demo\vehicule\repository\categorie\CategorieRepository.class
 com\spring\demo\Controller.class
+com\spring\demo\vehicule\repository\notif\NotifUserRepository.class
 com\spring\demo\vehicule\controller\annonce\AnnonceController.class
 com\spring\demo\vehicule\service\utilisateur\TokenService.class
 com\spring\demo\vehicule\repository\utilisateur\TokenRepository.class
@@ -16,6 +17,7 @@ com\spring\demo\vehicule\controller\peripherique\PeripheriqueController.class
 com\spring\demo\vehicule\model\annonce\Annonce.class
 com\spring\demo\vehicule\model\utilisateur\Utilisateur.class
 com\spring\demo\vehicule\repository\utilisateur\PeripheriqueRepository.class
+com\spring\demo\vehicule\model\notif\NotifUser.class
 com\spring\demo\vehicule\model\phone\Peripherique.class
 com\spring\demo\vehicule\repository\marque\MarqueRepository.class
 com\spring\demo\vehicule\service\annonce\AnnonceService.class
