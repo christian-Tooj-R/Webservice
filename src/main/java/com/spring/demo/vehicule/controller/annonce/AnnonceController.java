@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.demo.api.APIResponse;
@@ -43,6 +44,19 @@ public class AnnonceController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
+    
+    @PostMapping("/search")
+    public ResponseEntity<APIResponse> getAnnonceSearch(@RequestParam String min,@RequestParam String max,@RequestBody Annonce a) {
+        try {
+            List<Annonce> annonce = annonceService.search(min, max, a);
+            return ResponseEntity.ok(new APIResponse("", annonce));
+        } catch (Exception e) {
+            // TODO: handle exception
+            APIResponse response = new APIResponse("Erreur lors de la création du besoin: " + e.getMessage(), false);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+
 
     @GetMapping("/nonvalide")
     public ResponseEntity<APIResponse> getAnnonceNonValide(@RequestHeader("Authorization") String token) {

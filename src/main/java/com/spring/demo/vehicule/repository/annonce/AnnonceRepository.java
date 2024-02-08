@@ -18,4 +18,6 @@ public interface AnnonceRepository extends MongoRepository<Annonce, String> {
     
     @Query("{'favoris.iduser': ?0}")
     List<Annonce> findByFavoris(int iduser);
+    @Query("{'categorie': ?0,'marque': ?1}")
+    List<Annonce> getByCategorieAndMarque(String categorie,String marque);
 }

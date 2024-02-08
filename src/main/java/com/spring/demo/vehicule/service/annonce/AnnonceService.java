@@ -44,6 +44,20 @@ public class AnnonceService {
     public List<Annonce> getAnnoncesValide() {
         return annonceRepository.findByEstValide(1);
     }
+    
+    public List<Annonce> getByCategorieAndMarque(Annonce annonce) {
+        return annonceRepository.getByCategorieAndMarque(annonce.getCategorie(),annonce.getMarque());
+    }
+    public List<Annonce> search(String min,String max,Annonce a){
+        List<Annonce> all = getByCategorieAndMarque(a);
+        List<Annonce> rep = new ArrayList<>();
+        for (Annonce annonce : all) {
+            if(Double.parseDouble(min) <= annonce.getPrix() &&  annonce.getPrix() <= Double.parseDouble(max)){
+                rep.add(annonce);
+            }
+        }
+        return rep;
+    }
 
     public Annonce insertAnnonce(Annonce annonce) {
         return annonceRepository.save(annonce);
@@ -107,5 +121,6 @@ public class AnnonceService {
             throw new EntityNotFoundException("Annonce non trouvée avec l'ID : " + id);
         }
     }
+    
 }
 
