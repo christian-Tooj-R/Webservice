@@ -16,7 +16,7 @@ public class Annonce {
     private Date dateVente;
     private int status;
     private String image;
-    private int prop; // Modification du type de String à int
+    private int prop;
     private List<Favori> favoris;
     private int estValide;
 

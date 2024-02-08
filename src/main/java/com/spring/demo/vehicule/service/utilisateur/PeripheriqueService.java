@@ -9,6 +9,8 @@ import com.spring.demo.vehicule.model.phone.Peripherique;
 import com.spring.demo.vehicule.model.utilisateur.Token;
 import com.spring.demo.vehicule.repository.utilisateur.PeripheriqueRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class PeripheriqueService {
     private final PeripheriqueRepository peripheriqueRepository;
@@ -21,7 +23,7 @@ public class PeripheriqueService {
     public Peripherique createInstance(Peripherique peripherique) {
         return peripheriqueRepository.save(peripherique);
     }
-
+    @Transactional
     public void deleteByToken(Peripherique periph) {
         peripheriqueRepository.deleteByToken(periph.getToken());
     }

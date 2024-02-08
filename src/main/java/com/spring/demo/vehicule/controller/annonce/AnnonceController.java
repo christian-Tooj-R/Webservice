@@ -112,7 +112,21 @@ public class AnnonceController {
             return ResponseEntity.ok(new APIResponse("Annonce update avec succès, ID: " , true));
             
         } catch (Exception e) {
-            // TODO: handle exception
+            APIResponse response = new APIResponse("Erreur lors de la création annonce: " + e.getMessage(), false);
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+    
+    @PutMapping("/addFavoris/{id}")
+    public ResponseEntity<APIResponse> addFavoris(@PathVariable String id,@RequestHeader("Authorization") String token) {
+        try {
+            int iduser = tokenService.verifAuth(token);
+
+            annonceService.addFavoris(id,iduser);
+            return ResponseEntity.ok(new APIResponse("Annonce update avec succès, ID: " , true));
+            
+        } catch (Exception e) {
             APIResponse response = new APIResponse("Erreur lors de la création annonce: " + e.getMessage(), false);
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);

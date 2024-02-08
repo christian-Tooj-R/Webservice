@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.demo.vehicule.model.annonce.Annonce;
+import com.spring.demo.vehicule.model.annonce.Favori;
 import com.spring.demo.vehicule.model.annonce.Statistique;
 import com.spring.demo.vehicule.model.categorie.Categorie;
 import com.spring.demo.vehicule.repository.annonce.AnnonceRepository;
 import com.spring.demo.vehicule.repository.categorie.CategorieRepository;
-import com.spring.demo.vehicule.service.categorie.CategorieService;
 
 import jakarta.persistence.EntityNotFoundException;
 import java.util.Optional;
@@ -64,6 +64,18 @@ public class AnnonceService {
 
         annonceRepository.save(existingAnnonce);
     }
+    public void addFavoris(String idannonce,int id) {
+        Annonce existingAnnonce = annonceRepository.findById(idannonce)
+                .orElseThrow(() -> new NoSuchElementException("Annonce non trouvée avec l'ID : " + id));
+
+        Favori favori = new Favori();
+        favori.setIduser(id);
+
+        existingAnnonce.getFavoris().add(favori);
+
+        annonceRepository.save(existingAnnonce);
+    }
+    
 
     public List<Statistique> getAllStatistique()throws Exception{
         List<Categorie> listCateg = categorieRepository.findAll();
@@ -79,7 +91,6 @@ public class AnnonceService {
             statistique.setEffectif((countAnnonceByCategorie*100)/countAnnonceValide);
             listStatistique.add(statistique);
         }
-
         return listStatistique;
     }
 
