@@ -139,5 +139,22 @@ public class UtilisateurController {
         }
     }
     
+    @GetMapping("/getUser")
+    public ResponseEntity<APIResponse> getUtilisateurByToken(@RequestHeader("Authorization") String token) {
+        try {
+            long iduser = tokenService.verifAuth(token);
+            Optional<Utilisateur> utilisateur = utilisateurService.getUtilisateurById(iduser);
+            if (utilisateur.isPresent()) {
+                return ResponseEntity.ok(new APIResponse("", utilisateur.get()));
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        }
+        catch (Exception e) {
+            APIResponse response = new APIResponse("Erreur lors de la récupération de tous les utilisateurs: " + e.getMessage(), false);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+    
 }
        
