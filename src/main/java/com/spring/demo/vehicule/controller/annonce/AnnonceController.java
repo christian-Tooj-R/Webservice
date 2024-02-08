@@ -148,5 +148,19 @@ public class AnnonceController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
+    
+    @GetMapping("/getByFavoris")
+    public ResponseEntity<APIResponse> getByFavoris(@RequestHeader("Authorization") String token) {
+        try {
+        
+            int iduser = tokenService.verifAuth(token);
+
+            List<Annonce> all = annonceService.getAnnoncesByFavoris(iduser);
+            return ResponseEntity.ok(new APIResponse("Envoyée "+iduser, all));
+        }catch (Exception e) {
+            APIResponse response = new APIResponse("Erreur lors de la récupération de l'annonce : " + e.getMessage(), false);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
 
 }

@@ -31,6 +31,10 @@ public class AnnonceService {
     public List<Annonce> getAnnoncesByProprietaire(int propietaire) {
         return annonceRepository.findByProp(propietaire);
     }
+    
+    public List<Annonce> getAnnoncesByFavoris(int user) {
+        return annonceRepository.findByFavoris(user);
+    }
 
 
     public List<Annonce> getAnnoncesNonValide() {

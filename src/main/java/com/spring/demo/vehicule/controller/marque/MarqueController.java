@@ -42,9 +42,8 @@ public class MarqueController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<APIResponse> getAllMarques(@RequestHeader("Authorization") String token) {
+    public ResponseEntity<APIResponse> getAllMarques() {
         try {
-            tokenService.verifAuth(token);
             List<Marque> marques = marqueService.getAllMarques();
             return ResponseEntity.ok(new APIResponse("", marques));
 

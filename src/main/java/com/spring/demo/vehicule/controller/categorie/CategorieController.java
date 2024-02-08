@@ -40,9 +40,8 @@ public class CategorieController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<APIResponse> getAllCategories(@RequestHeader("Authorization") String token) {
+    public ResponseEntity<APIResponse> getAllCategories() {
         try {
-            tokenService.verifAuth(token);
             
             List<Categorie> categories = categorieService.getAllCategories();
             return ResponseEntity.ok(new APIResponse("", categories));

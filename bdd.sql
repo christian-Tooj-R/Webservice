@@ -52,3 +52,8 @@ create table peripherique(
     iduser int references utilisateur(id),
     token varchar
 );
+create table notifuser(
+    id serial,
+    iduser int references utilisateur(id),
+    message text
+);
