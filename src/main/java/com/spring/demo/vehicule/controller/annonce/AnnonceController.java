@@ -104,7 +104,7 @@ public class AnnonceController {
             int idprop = tokenService.verifAuth(token);
             annonce.setProp(idprop);
             annonce.setStatus(0);
-            annonce.setEstValide(1);
+            annonce.setEstValide(0);
             annonce.setFavoris(new ArrayList<>());
 
             Annonce insertedAnnonce = annonceService.insertAnnonce(annonce);
