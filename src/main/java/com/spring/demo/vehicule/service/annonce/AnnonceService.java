@@ -25,7 +25,7 @@ public class AnnonceService {
     @Autowired
     private CategorieRepository categorieRepository;
     public List<Annonce> getAnnoncesNonVendues() {
-        return annonceRepository.findByStatusAndEstValide(0, 1);
+        return annonceRepository.findByStatusAndEstValide(0, 0);
     }
 
     public List<Annonce> getAnnoncesByProprietaire(int propietaire) {
