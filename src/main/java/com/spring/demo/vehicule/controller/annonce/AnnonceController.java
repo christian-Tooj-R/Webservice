@@ -62,7 +62,7 @@ public class AnnonceController {
         try {
             tokenService.verifAuth(token);
 
-            List<Annonce> nonVendu = annonceService.getAnnoncesNonVendues();
+            List<Annonce> nonVendu = annonceService.getAnnoncesNonValide();
             return ResponseEntity.ok(new APIResponse("", nonVendu));
         } catch (Exception e) {
             // TODO: handle exception
